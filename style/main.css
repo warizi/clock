@@ -1,0 +1,318 @@
+@charset "utf-8";
+
+/* reset */
+* {
+    font-family: 'Noto Sans KR', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+/* header */
+body {
+    background-color: #280d4b;
+}
+.header_container {
+    width: 100%;
+    height: 80px;
+}
+/* main */
+main {
+    width: 1000px;
+    height: auto;
+    margin: 0 auto;
+}
+/* 시계 */
+.clock_section {
+    width: 1000px;
+    margin: 0 auto;
+    margin-top: 150px;
+    margin-bottom: 20px;
+}
+.bettery {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    margin-bottom: 10px;
+}
+.bettery_container {
+    position: relative;
+    width: 112px;
+    height: 50px;
+    border: 4px solid #d9d9d9;
+    border-radius: 8px;
+    background-color: #280d4b;
+    padding: 2px;
+}
+.bettery_count {
+    float: right;
+    width: 100px;
+    height: 100%;
+    background-color: #71fe6e;
+    border-radius: 2px;
+    transition: 1s linear;
+}
+.bettery_count::after {
+    clear: both;
+}
+.bettery_container::before {
+    position: absolute;
+    top: 12px;
+    left: -8px;
+    content: "";
+    width: 5px;
+    height: 18px;
+    background-color: #d9d9d9;
+    border-radius: 2px 0 0 2px;
+}
+.clock_date {
+    margin-right: 20px;
+    height: 40px;
+    line-height: 60px;
+    color: white;
+    font-size: 25px;
+}
+.clock_container {
+    display: block;
+    width: 1000px;
+    height: 100px;
+    border: 6px solid #d9d9d9;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 94px;
+    color: white;
+    font-size: 50px;
+    background-color: #280d4b;
+}
+/* cable */
+.cable_acitve_area {
+    width: 400px;
+    height: 550px;
+    position: absolute;
+    top: -230px;
+    left: 1020px;
+    z-index: 2;
+}
+#cable_line {
+    width: 400px;
+    height: 550px;
+    position: absolute;
+    top: -230px;
+    left: 1000px;
+    z-index: 1;
+}
+.cable_head {
+    width: 52px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1000;
+    transform-origin: 15% 50%;
+    position: absolute;
+    top: -10px;
+    left: 0;
+}
+.cable_head_middle {
+    width: 34px;
+    height: 23px;
+    background-color: #d9d9d9;
+    box-shadow: 0px 4px 4px 0 rgba(0, 0, 0, 0.5);
+    z-index: 11;
+}
+.cable_head_front {
+    width: 18px;
+    height: 18px;
+    background-color: #8f8f8f;
+    box-shadow: inset 0px -4px 4px 0 rgba(0, 0, 0, 0.25), 
+                0px 4px 4px 0 rgba(0, 0, 0, 0.5);
+    z-index: 10;
+}
+.first_line {
+    position: absolute;
+    top: 245px;
+    left: -20px;
+    width: 30px;
+    height: 13px;
+    background-color: #8f8f8f;
+    box-shadow: inset 0px -4px 4px 0 rgba(0, 0, 0, 0.25), 
+                0px 4px 4px 0 rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+.charge_area {
+    margin-left: 80px;
+    width: 100px;
+    height: 1px;
+    box-shadow: 2px 0 30px 10px rgba(100, 100, 200, 0.8);
+}
+.circle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    text-align: center;
+}
+.square {
+    position: absolute;
+    width: 100px;
+    height: 10px;
+    top: 0;
+    left: 0;
+    background-color: #dbdbdb;
+    box-shadow: inset 0px -4px 4px 0 rgba(0, 0, 0, 0.25), 
+    0px 4px 4px 0 rgba(0, 0, 0, 0.5);
+}
+/* alarm */
+.alarm_section {
+    width: 1000px;
+    padding: 10px;
+}
+.alarm_add_container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 150px;
+    background-color: aliceblue;
+}
+.alarm_list_container {
+    width: 100%;
+}
+.alarm_time_container {
+    display: grid;
+    width: 170px;
+    height: 80px;
+    margin-right: 40px;
+    grid-template-columns: 3fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+        'display up text'
+        'display down text';
+}
+.time_display {
+    background-color: white;
+    border-radius: 10px;
+    font-size: 50px;
+    text-align: center;
+    line-height: 80px;
+    width: 80px;
+    height: 80px;
+    grid-area: display;
+}
+.time_up_btn {
+    background-color: #FF8A1E;
+    border: none;
+    width: 50px;
+    height: 30px;
+    border-radius: 10px;
+    font-size: 25px;
+    color: white;
+    text-align: center;
+    line-height: 30px;
+    grid-area: up;
+    cursor: pointer;
+}
+.time_down_btn {
+    background-color: #FF8A1E;
+    border: none;
+    width: 50px;
+    height: 30px;
+    border-radius: 10px;
+    font-size: 25px;
+    color: white;
+    text-align: center;
+    line-height: 30px;
+    grid-area: down;
+    cursor: pointer;
+}
+.time_text {
+    grid-area: text;
+    font-size: 30px;
+    padding-top: 45px;
+}
+.add_alarm_btn {
+    width: 80px;
+    height: 100px;
+    border: none;
+    border-radius: 10px;
+    background-color: #FF8A1E;
+    color: white;
+    font-size: 20px;
+    transform: translateX(20px);
+    cursor: pointer;
+}
+.alarm_list_item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 80px;
+    overflow: hidden;
+    line-height: 80px;
+    font-size: 25px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    transition: 0.3s;
+}
+.date_tiem_container {
+    background-color: white;
+    border-radius: 10px;
+    width: 900px;
+    padding: 0 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+.alarm_delete_btn {
+    width: 70px;
+    border: none;
+    border-radius: 10px;
+    background-color: #FF8A1E;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+.blink_animation {
+    animation: blink 1s infinite;
+}
+@keyframes blink {
+    0% {
+        opacity: 100%;
+    }
+    50% {
+        opacity: 100%;
+    }
+    51% {
+        opacity: 0%;
+    }
+    100% {
+        opacity: 0%;
+    }
+}
+.alarm_add_text {
+    width: 100%;
+    height: 70px;
+    padding: 10px;
+    background-color: white;
+    margin-bottom: 20px;
+}
+.alarm_text {
+    width: 100%;
+    height: 50px;
+    font-size: 20px;
+    padding: 0 10px;
+    border: none;
+}
+.alarm_time_title {
+    width: 80%;
+}
